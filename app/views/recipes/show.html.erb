@@ -1,0 +1,17 @@
+<h1><%= @recipe.name %></h1>
+
+<h2><%= "For #{@recipe.servings} Person" %></h2>
+
+<p><%= @recipe.instructions %></p>
+
+<ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+  <% end %>
+</ul>
+
+<div>
+  <a href="<%= "#{@parent_path}/recipes/#{@recipe.id}/edit" %>"><button>Edit</button></a>
+</div>
+
+<a href="<%= "#{@parent_path}/recipes" %>">Back</a>
